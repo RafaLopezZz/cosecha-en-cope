@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-4 mb-4" *ngFor="let articulo of articulos">
+    <div class="card h-100">
+      <img [src]="articulo.imagenUrl" class="card-img-top" alt="{{ articulo.nombre }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ articulo.nombre }}</h5>
+        <p class="card-text">{{ articulo.descripcion }}</p>
+        <p class="text-muted">Categoría: {{ articulo.nombreCategoria }}</p>
+        <p class="text-muted">Productor: {{ articulo.nombreProductor }}</p>
+        <p><strong>{{ articulo.precio | currency:'EUR' }}</strong></p>
+        <button class="btn btn-primary">Añadir al carrito</button>
+      </div>
+    </div>
+  </div>
+</div>
+
