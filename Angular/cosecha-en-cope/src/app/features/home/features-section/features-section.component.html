@@ -1,0 +1,54 @@
+<section class="features">
+  <div class="container">
+    <div class="section__head">
+      <span class="tag">Destacados</span>
+      <h2 class="title">Explora nuestras categorías</h2>
+      <p class="subtitle">Frutas, verduras y artesanías locales.</p>
+      <div class="section__actions">
+        <a class="btn btn--outline" routerLink="/categorias">Ver categorías</a>
+        <a class="btn" aria-label="Siguiente"> <span class="chev">›</span> </a>
+      </div>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card__image" aria-hidden="true"></div>
+        <div class="card__body">
+          <span class="tag">Fruta</span>
+          <h3 class="card__title">Manzana de huerta</h3>
+          <p class="card__text">Crujiente y dulce, cosechada esta semana.</p>
+          <div class="card__actions">
+            <a class="btn-link" routerLink="/articulos?cat=frutas">Ver más</a>
+            <span class="chev">›</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__image" aria-hidden="true"></div>
+        <div class="card__body">
+          <span class="tag">Verdura</span>
+          <h3 class="card__title">Lechuga romana</h3>
+          <p class="card__text">Fresca del día, ideal para ensaladas.</p>
+          <div class="card__actions">
+            <a class="btn-link" routerLink="/articulos?cat=verduras">Ver más</a>
+            <span class="chev">›</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card--h">
+        <div class="card__image card__image--portrait" aria-hidden="true"></div>
+        <div class="card__body">
+          <span class="tag">Artesanía</span>
+          <h3 class="card__title">Mermelada casera</h3>
+          <p class="card__text">Elaborada con fruta de temporada.</p>
+          <div class="card__actions">
+            <a class="btn-link" routerLink="/articulos?cat=artesanias">Ver más</a>
+            <span class="chev">›</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

@@ -1,17 +1,27 @@
-import { Injectable, inject, signal } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { Injectable, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ArticuloResponse } from '../../shared/models/articulo-response';
-import { environment } from '../../../environments/environment';
+
+export interface ArticuloResponse {
+  idArticulo: number;
+  nombre: string;
+  precio: number;
+  descripcion: string;
+  stock: number;
+  imagenUrl: string;
+  nombreCategoria: string;
+  nombreProductor: string;
+  idCategoria?: number;
+  idProductor?: number;
+}
+
+const API = 'http://localhost:8081/cosechaencope';
 
 @Injectable({ providedIn: 'root' })
 export class ArticuloService {
   private http = inject(HttpClient);
-  private apiUrl = 'http://localhost:8081/cosechaencope';
-  
-  private _articulos = signal<ArticuloResponse[]>([]);
-
   getArticulos(): Observable<ArticuloResponse[]> {
-    return this.http.get<ArticuloResponse[]>(`${this.apiUrl}/articulos`);
+    return this.http.get<ArticuloResponse[]>(`${API}/articulos`);
   }
 }
+

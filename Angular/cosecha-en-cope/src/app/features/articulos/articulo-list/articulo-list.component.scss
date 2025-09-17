@@ -1,0 +1,68 @@
+:host {
+  display: block;
+}
+
+/* Contenedor y títulos */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+h2.my-4 {
+  margin: 32px 0;
+  font: 700 40px/1.2 Roboto, system-ui;
+  color: #000;
+}
+
+/* Tarjeta de artículo */
+.card {
+  border: 1px solid #000;
+  border-radius: 0;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 0 #000;
+}
+
+/* Imagen superior */
+.card-img-top {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* asegura proporción consistente */
+  object-fit: cover; /* recorte elegante */
+  border-bottom: 1px solid #000;
+  background: #eaeaea;
+}
+
+/* Cuerpo de la tarjeta */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+}
+.card-title {
+  margin: 0;
+  font: 700 20px/1.4 Roboto, system-ui;
+  color: #000;
+}
+.card-text {
+  margin: 0;
+  font: 400 16px/1.5 Roboto, system-ui;
+  color: #000;
+}
+.text-muted {
+  margin: 0;
+  font: 400 14px/1.5 Roboto, system-ui;
+  color: #0009 !important;
+}
+
+/* Precio */
+.card-body .precio {
+  margin-top: auto; /* empuja el precio al fondo */
+  font: 700 18px/1.4 Roboto, system-ui;
+  color: #000;
+}

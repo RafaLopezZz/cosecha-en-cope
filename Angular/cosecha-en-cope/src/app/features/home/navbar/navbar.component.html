@@ -1,0 +1,42 @@
+<header class="nav">
+  <div class="container nav__container">
+    <a class="nav__brand" routerLink="/" aria-label="Ir a inicio">
+      <img
+        src="/images/logo_test.svg"
+        width="160"
+        height="60"
+        alt="Cosecha en Cope"
+      />
+    </a>
+
+    <nav class="nav__links" aria-label="Principal">
+      <a routerLink="/" routerLinkActive="active">Inicio</a>
+      <a routerLink="/articulos" routerLinkActive="active">Productos</a>
+      <a routerLink="/productores" routerLinkActive="active">Productores</a>
+
+      <div
+        class="nav__dropdown"
+        (mouseenter)="open = true"
+        (mouseleave)="open = false"
+      >
+        <button
+          class="nav__dropbtn"
+          aria-haspopup="true"
+          [attr.aria-expanded]="open"
+        >
+          Categorías ▾
+        </button>
+        <div class="nav__menu" *ngIf="open">
+          <a routerLink="/categorias/frutas">Frutas</a>
+          <a routerLink="/categorias/verduras">Verduras</a>
+          <a routerLink="/categorias/artesanias">Artesanías</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="btn btn--outline" routerLink="/login">Entrar</a>
+      <a class="btn btn--primary" routerLink="/registro">Registrarse</a>
+    </div>
+  </div>
+</header>
