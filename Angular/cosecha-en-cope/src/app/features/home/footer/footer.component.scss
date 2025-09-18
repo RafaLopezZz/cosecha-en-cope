@@ -3,7 +3,14 @@
 .container{ max-width:1280px; margin:0 auto; padding:0 24px; display:flex; flex-direction:column; gap:80px; }
 .footer__content{ display:flex; gap:64px; }
 .footer__about{ flex:2; display:flex; flex-direction:column; gap:24px; }
-.footer__logo{ width:84px; height:36px; background:#000; }
+.footer__logo { display:flex; align-items:center; }
+.footer__logo img {
+  display:block;
+  width:auto;
+  height:170px;        /* coincide con tu atributo height o el alto deseado */
+  max-width:170px;    /* tope de ancho consistente */
+  object-fit:contain; /* por si el contenedor limita */
+}
 .footer__block{ display:flex; flex-direction:column; gap:4px; }
 .block__title{ font:600 14px/1.5 Roboto,system-ui; color:#000; }
 .block__text{ font:400 14px/1.5 Roboto,system-ui; color:#000; }
@@ -11,8 +18,12 @@
 .block__links a{ color:#000; text-decoration:underline; }
 
 .footer__social{ display:flex; gap:12px; }
-.ico{ display:inline-block; width:24px; height:24px; background:#000; }
-.ico--fb,.ico--ig,.ico--x,.ico--in,.ico--yt{ /* Placeholder */ }
+.ico{ width:24px; height:24px; display:inline-block; background-size:cover; background-position:center; }
+.ico--fb{ background-image:url('/iconos/facebook.png'); }
+.ico--ig{ background-image:url('/iconos/instagram.png'); }
+.ico--in{ background-image:url('/iconos/linkedin.png'); }
+.ico--x { background-image:url('/iconos/gorjeo.png'); }
+
 
 .footer__links{ flex:1; display:flex; gap:24px; }
 .footer__links .col{ display:flex; flex-direction:column; gap:8px; min-width:188px; }
