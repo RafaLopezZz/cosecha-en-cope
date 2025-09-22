@@ -153,6 +153,36 @@ public class ArticuloService {
     }
 
     /**
+     * Lista los artículos que pertenecen a una categoría específica.
+     *
+     * @param idCategoria ID de la categoría para filtrar los artículos.
+     * @return Lista de DTOs de respuesta con los artículos de la categoría.
+     * @throws ResourceNotFoundException si la categoría no existe.
+     */
+    public List<ArticuloResponse> listarPorCategoria(Long idCategoria) {
+        log.info("Buscando artículos por categoría con id: {}", idCategoria);
+
+        // Validación
+        Categoria categoria = categoriaRepository.findById(idCategoria)
+                .orElseThrow(() -> {
+                    log.error("Categoría no encontrada con id: {}", idCategoria);
+                    return new ResourceNotFoundException("Categoría no encontrada");
+                });
+
+        // Obtención de artículos por categoría
+        List<Articulo> articulos = articuloRepository.findByCategoria(categoria);
+
+        if (articulos.isEmpty()) {
+            log.warn("No se encontraron artículos para la categoría id: {}", idCategoria);
+        }
+
+        // Mapeamos a DTOs
+        return articulos.stream()
+                .map(this::mapearResponseDTO)
+                .collect(Collectors.toList());
+    }
+
+    /**
      * Elimina un artículo por su ID.
      *
      * @param id ID del artículo a eliminar.
@@ -190,17 +220,16 @@ public class ArticuloService {
         if (articulo.getCategoria() != null) {
             dto.setIdCategoria(articulo.getCategoria().getIdCategoria());
             dto.setNombreCategoria(articulo.getCategoria().getNombre());
-            if(articulo.getDescripcion() == null) {
-            dto.setDescripcion(articulo.getCategoria().getDescripcion());
+            if (articulo.getDescripcion() == null) {
+                dto.setDescripcion(articulo.getCategoria().getDescripcion());
             }
         }
-        
+
         if (articulo.getProductor() != null) {
             dto.setIdProductor(articulo.getProductor().getIdProductor());
             dto.setNombreProductor(articulo.getProductor().getNombre());
         }
         return dto;
     }
-
 
 }

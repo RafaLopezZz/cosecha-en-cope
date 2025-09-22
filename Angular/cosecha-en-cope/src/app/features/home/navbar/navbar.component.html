@@ -12,30 +12,13 @@
     <nav class="nav__links" aria-label="Principal">
       <a routerLink="/" routerLinkActive="active">Inicio</a>
       <a routerLink="/articulos" routerLinkActive="active">Productos</a>
-      <a routerLink="/productores" routerLinkActive="active">Productores</a>
-
-      <div
-        class="nav__dropdown"
-        (mouseenter)="open = true"
-        (mouseleave)="open = false"
-      >
-        <button
-          class="nav__dropbtn"
-          aria-haspopup="true"
-          [attr.aria-expanded]="open"
-        >
-          Categorías ▾
-        </button>
-        <div class="nav__menu" *ngIf="open">
-          <a routerLink="/categorias/frutas">Frutas</a>
-          <a routerLink="/categorias/verduras">Verduras</a>
-          <a routerLink="/categorias/artesanias">Artesanías</a>
-        </div>
-      </div>
+      <a routerLink="/productores" routerLinkActive="active">¿Quiénes somos?</a>
+      <a routerLink="/contacto" routerLinkActive="active">Contacto</a>
     </nav>
 
     <div class="nav__actions">
-      <a class="btn btn--outline" routerLink="/login">Entrar</a>
+      <a class="btn btn--outline" routerLink="/login">Cosechar</a>
+      <a class="btn btn--outline" routerLink="/login/productores">Producir</a>
       <a class="btn btn--primary" routerLink="/registro">Registrarse</a>
     </div>
   </div>

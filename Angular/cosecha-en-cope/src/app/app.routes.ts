@@ -11,9 +11,11 @@ import { roleGuard } from './core/guards/role.guard';
 export const routes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'login', component: SignInComponent },
+  { path: 'login/productores', component: SignInComponent, data: { productor: true } },
   { path: 'registro', component: SignUpComponent },
   { path: 'error', component: SignErrComponent },
   { path: 'articulos', component: ArticuloListComponent /*, canActivate: [authGuard]*/ },
+  { path: 'categorias/:idCategoria', component: ArticuloListComponent },
   // Ejemplo zona productor protegida:
   // { path: 'productor', canActivate: [authGuard, roleGuard], data: { roles: ['PRODUCTOR'] }, loadComponent: () => import('./features/productor/dashboard.component').then(m => m.DashboardComponent) }
 ];

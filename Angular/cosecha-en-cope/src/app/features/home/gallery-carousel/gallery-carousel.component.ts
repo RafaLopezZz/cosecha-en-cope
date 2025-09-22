@@ -1,4 +1,3 @@
-// src/app/features/home/gallery-carousel/gallery-carousel.component.ts
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -12,8 +11,8 @@ import { CommonModule } from '@angular/common';
 export class GalleryCarouselComponent {
   @ViewChild('track', { static: true }) track!: ElementRef<HTMLElement>;
   images: string[] = [
-    '/assets/gal/1.jpg','/assets/gal/2.jpg','/assets/gal/3.jpg','/assets/gal/4.jpg',
-    '/assets/gal/5.jpg','/assets/gal/6.jpg','/assets/gal/7.jpg','/assets/gal/8.jpg',
+    '/gal/1.webp','/gal/2.webp','/gal/3.webp','/gal/4.webp',
+    '/gal/5.jpg','/gal/6.jpg','/gal/7.jpg','/gal/8.webp',
   ];
   index = 0;
 

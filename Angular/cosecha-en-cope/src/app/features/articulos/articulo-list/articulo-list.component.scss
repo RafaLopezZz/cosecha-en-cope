@@ -10,7 +10,7 @@
 }
 h2.my-4 {
   margin: 32px 0;
-  font: 700 40px/1.2 Roboto, system-ui;
+  font: 700 28px/1.2 Roboto, system-ui;
   color: #000;
 }
 
@@ -41,8 +41,8 @@ h2.my-4 {
 .card-body {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 16px;
+  gap: 6px;
+  padding: 12px;
 }
 .card-title {
   margin: 0;

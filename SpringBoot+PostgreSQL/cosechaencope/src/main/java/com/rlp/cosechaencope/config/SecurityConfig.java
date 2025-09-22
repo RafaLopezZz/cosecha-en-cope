@@ -107,6 +107,7 @@ public class SecurityConfig {
                         .requestMatchers("/cosechaencope/usuarios/productores").permitAll()
                         .requestMatchers("/cosechaencope/auth/registro/clientes").permitAll()
                         .requestMatchers("/cosechaencope/auth/registro/productores").permitAll()
+                        .requestMatchers("/cosechaencope/categorias/**").permitAll()
                         .requestMatchers("/cosechaencope/usuarios/productores/**").hasAnyRole("USER", "ADMIN", "SUPERADMIN")
                         .requestMatchers("/cosechaencope/usuarios/clientes/**").hasAnyRole("USER", "ADMIN", "SUPERADMIN")
                         .requestMatchers("/cosechaencope/carrito").hasAnyRole("SUPERADMIN", "ADMIN", "USER", "CLIENTE")

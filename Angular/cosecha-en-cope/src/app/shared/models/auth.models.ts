@@ -1,11 +1,8 @@
-export interface LoginRequest { email: string; password: string; }
-export interface UsuarioRequest {
+export interface LoginRequest {
   email: string;
   password: string;
-  nombre?: string;
-  direccion?: string;
-  telefono?: string;
 }
+
 export interface JwtResponse {
   token: string;
   id: number;
@@ -13,5 +10,8 @@ export interface JwtResponse {
   tipoUsuario: 'CLIENTE' | 'PRODUCTOR';
   roles: string[];
 }
-export interface UsuarioResponse { idUsuario: number; email: string; tipoUsuario: string; rol: string; }
-export interface ApiError { code?: number; message: string; }
+
+export interface ApiError {
+  code?: number;
+  message: string;
+}
