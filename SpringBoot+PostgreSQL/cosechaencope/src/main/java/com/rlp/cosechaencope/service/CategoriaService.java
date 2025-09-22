@@ -131,6 +131,7 @@ public class CategoriaService {
         dto.setIdCategoria(categoria.getIdCategoria());
         dto.setNombre(categoria.getNombre());
         dto.setDescripcion(categoria.getDescripcion());
+        dto.setImagenUrl(categoria.getImagenUrl());
         return dto;
     }
 }

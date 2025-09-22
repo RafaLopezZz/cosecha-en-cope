@@ -27,4 +27,6 @@ public class CategoriaResponse {
     @Schema(description = "Descripción de la categoría", example = "Categoría que agrupa todos los tipos de frutas")
     private String descripcion;
 
+    @Schema(description = "URL de la imagen representativa de la categoría", example = "http://example.com/imagen.jpg")
+    private String imagenUrl;
 }

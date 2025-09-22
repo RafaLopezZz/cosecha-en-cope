@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rlp.cosechaencope.dto.request.CategoriaRequest;
+import com.rlp.cosechaencope.dto.response.ArticuloResponse;
 import com.rlp.cosechaencope.dto.response.CategoriaResponse;
 import com.rlp.cosechaencope.dto.response.MessageResponse;
+import com.rlp.cosechaencope.service.ArticuloService;
 import com.rlp.cosechaencope.service.CategoriaService;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -35,11 +37,11 @@ import jakarta.validation.Valid;
  * <p>
  * Endpoints REST:</p>
  * <ul>
- * <li>POST     /cosechaencope/categorias        → Crear categoría</li>
- * <li>GET      /cosechaencope/categorias/{id}   → Obtener categoría por ID</li>
- * <li>GET      /cosechaencope/categorias        → Listar categorías</li>
- * <li>PUT      /cosechaencope/categorias/{id}   → Actualizar categoría</li>
- * <li>DELETE   /cosechaencope/categorias/{id}   → Eliminar categoría</li>
+ * <li>POST /cosechaencope/categorias → Crear categoría</li>
+ * <li>GET /cosechaencope/categorias/{id} → Obtener categoría por ID</li>
+ * <li>GET /cosechaencope/categorias → Listar categorías</li>
+ * <li>PUT /cosechaencope/categorias/{id} → Actualizar categoría</li>
+ * <li>DELETE /cosechaencope/categorias/{id} → Eliminar categoría</li>
  * </ul>
  *
  * @author rafalopezzz
@@ -52,6 +54,9 @@ public class CategoriaController {
 
     @Autowired
     private CategoriaService categoriaService;
+
+    @Autowired
+    private ArticuloService articuloService;
 
     /**
      * Crea una nueva categoría en el sistema.
@@ -127,6 +132,19 @@ public class CategoriaController {
     public ResponseEntity<CategoriaResponse> obtenerCategoriaPorId(@PathVariable Long idCategoria) {
         CategoriaResponse response = categoriaService.obtenerCategoriaPorId(idCategoria);
         return ResponseEntity.ok(response);
+    }
+
+    /**
+     * Lista todos los artículos asociados a una categoría específica.
+     *
+     * @param idCategoria ID de la categoría cuyos artículos se desean listar.
+     * @return Lista de DTOs de respuesta con los datos de los artículos
+     * encontrados.
+     */
+    @GetMapping("/{idCategoria}/articulos")
+    public ResponseEntity<List<ArticuloResponse>> listarPorCategoria(@PathVariable Long idCategoria) {
+        List<ArticuloResponse> articulos = articuloService.listarPorCategoria(idCategoria);
+        return ResponseEntity.ok(articulos);
     }
 
     /**

@@ -59,4 +59,7 @@ public class Categoria {
      */
     @OneToMany(mappedBy = "categoria")
     private List<Articulo> articulos;
+
+    @Column(name = "imagen_url")
+    private String imagenUrl;
 }

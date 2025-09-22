@@ -8,7 +8,7 @@ import lombok.Data;
  * DTO de respuesta que representa los datos completos de un proveedor.
  *
  * <p>Este objeto es utilizado para devolver al cliente (frontend) la información
- * relevante sobre un proveedor, incluyendo su relación con el usuario y detalles
+ * relevante sobre un productor, incluyendo su relación con el usuario y detalles
  * como la fecha de registro y la URL asociada.</p>
  *
  * <p>Contiene un {@link UsuarioResponse} para representar la información del

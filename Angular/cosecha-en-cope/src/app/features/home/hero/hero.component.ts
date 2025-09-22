@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { NgOptimizedImage } from "@angular/common";
+import { CommonModule, NgOptimizedImage } from "@angular/common";
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-hero',
-  imports: [NgOptimizedImage],
+  standalone: true,
+  imports: [CommonModule, NgOptimizedImage, RouterModule],
   templateUrl: './hero.component.html',
-  styleUrl: './hero.component.scss'
+  styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent {
 

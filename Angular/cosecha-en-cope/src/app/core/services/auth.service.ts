@@ -1,6 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { LoginRequest, JwtResponse, UsuarioRequest, UsuarioResponse } from '../../shared/models/auth.models';
+import { LoginRequest, JwtResponse } from '../../shared/models/auth.models';
+import { UsuarioRequest, UsuarioResponse } from '../../shared/models/usuario.models';
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { UserStoreService } from './user-store.service';
@@ -15,6 +16,15 @@ export class AuthService {
 
   login(dto: LoginRequest) {
     return this.http.post<JwtResponse>(`${API}/auth/login`, dto).pipe(
+      tap(res => {
+        sessionStorage.setItem('authToken', res.token);
+        this.store.set(res);
+      })
+    );
+  }
+
+  loginProductor(dto: LoginRequest) {
+    return this.http.post<JwtResponse>(`${API}/auth/login/productores`, dto).pipe(
       tap(res => {
         sessionStorage.setItem('authToken', res.token);
         this.store.set(res);

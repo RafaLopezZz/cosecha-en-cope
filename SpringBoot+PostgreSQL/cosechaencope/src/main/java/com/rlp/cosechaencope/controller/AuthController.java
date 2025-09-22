@@ -175,10 +175,10 @@ public class AuthController {
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
 
         // Comprobar tipo de usuario
-        if (!"PROVEEDOR".equalsIgnoreCase(userDetails.getTipoUsuario())) {
+        if (!"PRODUCTOR".equalsIgnoreCase(userDetails.getTipoUsuario())) {
             return ResponseEntity
                     .status(HttpStatus.FORBIDDEN)
-                    .body("Acceso sólo permitido a usuarios PROVEEDOR");
+                    .body("Acceso sólo permitido a usuarios PRODUCTORES");
         }
 
         // Generar JWT y roles
