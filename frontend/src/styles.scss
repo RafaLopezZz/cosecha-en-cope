@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* RESET GLOBAL PARA STICKY NAVBAR */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  /* Asegurar que no hay overflow hidden que interfiera con sticky */
+}
+
+body {
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Asegurar que app-root no interfiera con sticky */
+app-root {
+  display: block;
+  position: relative;
+  overflow: visible;
+}
+
+/* TÍTULOS GLOBALES */
+
+.section__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.title {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 120px;
+  height: 4px;
+  background: #4caf50;
+  border-radius: 2px;
+  transform: translateX(-50%);
+}
