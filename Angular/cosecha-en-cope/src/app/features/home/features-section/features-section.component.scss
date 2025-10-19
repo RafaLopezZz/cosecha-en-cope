@@ -1,0 +1,131 @@
+:host {
+  display: block;
+}
+.features {
+  background: #fff;
+  padding: 112px 0;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.section__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  margin-bottom: 48px;
+}
+.tag {
+  font: 600 16px/1.5 Roboto, system-ui;
+  color: #000;
+}
+.title {
+  font: 700 48px/1.2 Roboto, system-ui;
+  color: #000;
+  margin: 0;
+}
+.subtitle {
+  font: 400 18px/1.5 Roboto, system-ui;
+  color: #000;
+  margin: 0;
+}
+.section__actions {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 8px;
+}
+.btn {
+  border: 1px solid #000;
+  padding: 12px 24px;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+}
+.btn-link {
+  color: #000;
+  text-decoration: none;
+}
+.chev {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  border: 1px solid #000;
+  line-height: 24px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+.card {
+  border: 1px solid #000;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.card__image {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+
+  img.card__image--circle {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.card__image--portrait {
+  height: auto;
+  min-height: 389px;
+  background-image: url("/assets/placeholder-portrait.png");
+}
+.card--h {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.card__body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.card__title {
+  font: 700 24px/1.4 Roboto, system-ui;
+  margin: 0;
+  color: #000;
+}
+.card__text {
+  font: 400 16px/1.5 Roboto, system-ui;
+  margin: 0;
+  color: #000;
+}
+.card__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 1100px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .card--h {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 680px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}

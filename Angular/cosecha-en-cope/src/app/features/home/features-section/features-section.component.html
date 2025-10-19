@@ -1,0 +1,31 @@
+<section class="features">
+  <div class="container">
+    <div class="section__head">
+      <span class="tag">Destacados</span>
+      <h2 class="title">Explora nuestras categorías</h2>
+      <div class="section__actions">
+        <!-- <a class="btn btn--outline" routerLink="/categorias">Ver categorías</a>
+        <a class="btn" aria-label="Siguiente"> <span class="chev">›</span> </a> -->
+      </div>
+    </div>
+
+    <div class="cards">
+      <article class="card" *ngFor="let categoria of categorias">
+        <div class="card__image" aria-hidden="true">
+          <img [src]="categoria.imagenUrl" alt="{{categoria.nombre}}" class="card__image--circle" />
+        </div>
+        <div class="card__body">
+          <span class="tag">{{ categoria.nombre }}</span>
+          <h3 class="card__title">{{ categoria.descripcion }}</h3>
+          <div class="card__actions">
+            <a class="btn-link" [routerLink]="['/articulos']" [queryParams]="{ cat: categoria.nombre.toLowerCase() }"
+              >Ver más</a
+            >
+            <span class="chev">›</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+

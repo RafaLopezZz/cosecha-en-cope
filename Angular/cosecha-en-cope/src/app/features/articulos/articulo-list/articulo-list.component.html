@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+
+<section class="container mt-4">
+  <h2 class="my-4">Productos</h2>
+  <select
+    name="categoria"
+    [(ngModel)]="categoriaSeleccionada"
+    class="form-select mb-3"
+  >
+    <option value="">Todas las categorías</option>
+    <option value="1">Frutas</option>
+    <option value="2">Verduras</option>
+    <option value="3">Cestas</option>
+  </select>
+  <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+    <div class="col d-flex" *ngFor="let articulo of articulosFiltrados">
+      <div class="card h-100 w-100">
+        <img
+          [src]="articulo.imagenUrl"
+          class="card-img-top"
+          alt="{{ articulo.nombre }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ articulo.nombre }}</h5>
+          <p class="card-text">{{ articulo.descripcion }}</p>
+          <p class="text-muted">Categoría: {{ articulo.nombreCategoria }}</p>
+          <p class="text-muted">Productor: {{ articulo.nombreProductor }}</p>
+          <p class="precio">{{ articulo.precio | currency : "EUR" }}</p>
+          <button class="btn btn-primary mt-auto">Añadir al carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
